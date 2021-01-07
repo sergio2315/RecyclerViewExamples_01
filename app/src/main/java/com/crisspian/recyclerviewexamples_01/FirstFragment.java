@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.crisspian.recyclerviewexamples_01.adapter.ItemAdapter;
 import com.crisspian.recyclerviewexamples_01.databinding.FragmentFirstBinding;
@@ -32,10 +33,9 @@ private FragmentFirstBinding binding;
         super.onViewCreated(view, savedInstanceState);
         ItemAdapter mAdapter = new ItemAdapter(returnItemList());
         binding.rvItem.setAdapter(mAdapter);
+        binding.rvItem.setLayoutManager(new LinearLayoutManager(getContext()));
        // NavHostFragment.findNavController(FirstFragment.this).navigate(directions);
     }
-
-
 
     //Generamos un listado de datos del tipo Item.
     private List<Item> returnItemList() {
